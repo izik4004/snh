@@ -8,14 +8,17 @@ if(isset($_SESSION['loggedIn']) && !empty($_SESSION['loggedIn'])){
 
 
 ?>
-
-   
-        <h3>Register</h3>
-    
+<div class="container">
+    <div class="col-8">
+        <h2>Register</h2>
+    </div>
+    <div class="col-10">
         <p><strong>Welcome, Please Register</strong></p>
-    
+    </div>
+    <div class="col-10">
         <p>All Fields are required</p>
-
+    </div>
+    <div class="col-8">
 
         <form method="POST" action="processregister.php">
         <p>
@@ -61,11 +64,7 @@ if(isset($_SESSION['loggedIn']) && !empty($_SESSION['loggedIn'])){
             <p>
                 <label>Gender</label><br />
                 <select class="form-control" name="gender" >
-                <?php              
-                    if(isset($_SESSION['department'])){
-                        echo "value=" . $_SESSION['department'];                                                             
-                    }                
-                ?>
+               
                     <option value="">Select One</option>
                     <option 
                     <?php              
@@ -91,34 +90,55 @@ if(isset($_SESSION['loggedIn']) && !empty($_SESSION['loggedIn'])){
                     <option value="">Select One</option>
                     <option 
                     <?php              
-                        if(isset($_SESSION['designation']) && $_SESSION['designation'] == 'Medical Team (MT)'){
+                        if(isset($_SESSION['designation']) && $_SESSION['designation'] == 'Mentors (MT)'){
                             echo "selected";                                                           
                         }                
                     ?>
-                    >Medical Team (MT)</option>
+                    >Mentors (MT)</option>
                     <option 
                     <?php              
-                        if(isset($_SESSION['designation']) && $_SESSION['designation'] == 'Patient'){
+                        if(isset($_SESSION['designation']) && $_SESSION['designation'] == 'Interns'){
                             echo "selected";                                                           
                         }                
                     ?>
-                    >Patient</option>
+                    >Interns</option>
                 </select>
             </p>
             <p>
-                <label class="label" for="department">Department</label><br />
-                <input
-                <?php              
-                    if(isset($_SESSION['department'])){
-                        echo "value=" . $_SESSION['department'];                                                             
-                    }                
-                ?>
-                type="text" id="department" class="form-control" name="department" placeholder="Department"  />
-            
-            </p>
-            <p>
+            <label>Department</label><br />
+                <select class="form-control" name="department" >
+                    <option value="">Select One</option>
+                    <option
+                    <?php              
+                        if(isset($_SESSION['department']) && $_SESSION['department'] == 'Frontend (FE)'){
+                            echo "selected";                                                           
+                        }                
+                    ?>
+                    
+                    >Frontend(FE)</option>
+                    <option
+                    <?php              
+                        if(isset($_SESSION['department']) && $_SESSION['department'] == 'Backend (BE)'){
+                            echo "selected";                                                           
+                        }                
+                    ?>
+                               
+                    >Backend (BE)</option>
+                    <option
+                    <?php              
+                        if(isset($_SESSION['department']) && $_SESSION['department'] == 'Design (UI/UX)'){
+                            echo "selected";                                                           
+                        }                
+                    ?>
+                    
+                    
+                    >Design</option>
+                    </select>
+                </p>
+                              
+                <p>
                 <button class="btn btn-sm btn-success" type="submit">Register</button>
-            </p>
+                </p>
             <p>
                     <a href="forgot.php">Forgot Password</a><br />
                     <a href="login.php">Already have an account? Login</a>

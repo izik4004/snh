@@ -8,10 +8,13 @@ if(isset($_SESSION['loggedIn']) && !empty($_SESSION['loggedIn'])){
 
 ?>
 
-        <h3>Login</h3>
-    
+<div class="container">
+    <div class="col-10">
+        <h2>Login</h2>
+    </div>
+    <div class="col-10">
         <p>
-        <?php print_alert(); ?>
+        <?php  print_alert(); ?>
         </p>
         <form method="POST" action="processlogin.php">
     
@@ -45,4 +48,3 @@ if(isset($_SESSION['loggedIn']) && !empty($_SESSION['loggedIn'])){
         </form>
     </div>
 </div>
-<?php include_once('lib/footer.php'); ?>

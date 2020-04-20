@@ -34,8 +34,12 @@ function find_user($email = ""){
         die();
     }
 
+
+
     $allUsers = scandir("db/users/"); //return @array (2 filled)
     $countAllUsers = count($allUsers);
+
+    $newUserId = $countAllUsers-1;
 
     for ($counter = 0; $counter < $countAllUsers ; $counter++) {
        
@@ -58,5 +62,7 @@ function find_user($email = ""){
 function save_user($userObject){
     file_put_contents("db/users/". $userObject['email'] . ".json", json_encode($userObject));
 }
+
+
 
 

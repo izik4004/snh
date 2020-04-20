@@ -46,10 +46,10 @@ if($errorCount > 0){
                 $_SESSION['fullname'] = $userObject->first_name . " " . $userObject->last_name;
                 $_SESSION['role'] = $userObject->designation;
                 
-                if($userObject->designation == 'Patient'){
-                    header("Location: patient.php");
+                if($userObject->designation == 'Interns'){
+                    header("Location: interns.php");
                 }else{
-                    header("Location: mt.php");
+                    header("Location: mentors.php");
                 }
                 die();
             
