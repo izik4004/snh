@@ -13,6 +13,9 @@ $designation = $_POST['designation'] !="" ? $_POST['designation'] : $errorCount+
 $department = $_POST['department'] !="" ? $_POST['department'] : $errorCount++; 
 
 
+
+
+
     $_SESSION['first_name'] = $first_name;
     $_SESSION['last_name'] = $last_name;
     $_SESSION['email'] = $email;
@@ -66,4 +69,5 @@ save_user($userObject);
     
     $_SESSION["message"] = "Registration successful, you can now login " . $first_name;
     header("Location: login.php");
+    
 }   

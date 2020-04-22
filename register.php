@@ -20,7 +20,7 @@ if(isset($_SESSION['loggedIn']) && !empty($_SESSION['loggedIn'])){
     </div>
     <div class="col-8">
 
-        <form method="POST" action="processregister.php">
+        <form method="POST" action="processregister.php" >
         <p>
            <?php print_alert(); ?> 
         </p>
@@ -102,6 +102,7 @@ if(isset($_SESSION['loggedIn']) && !empty($_SESSION['loggedIn'])){
                         }                
                     ?>
                     >Interns</option>
+                    
                 </select>
             </p>
             <p>

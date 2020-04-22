@@ -48,8 +48,11 @@ if($errorCount > 0){
                 
                 if($userObject->designation == 'Interns'){
                     header("Location: interns.php");
-                }else{
+                }else if ($userObject->designation == 'mentors'){
                     header("Location: mentors.php");
+                
+                }else{
+                    header("Location: admin.php");
                 }
                 die();
             
