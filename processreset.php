@@ -1,4 +1,4 @@
-<?php session_start();
+<?php 
     require_once('functions/user.php');
     require_once('functions/alert.php');
     require_once('functions/redirect.php');
@@ -50,7 +50,7 @@ if($errorCount > 0){
                         unlink("db/users/".$currentUser); //file delete, user data delete
                         unlink("db/token/".$currentUser); //file delete, token data delete
 
-                        save_user($userObject);
+                        update_user($userObject);
 
                         set_alert('message',"Password Reset Successful, you can now login ");
 

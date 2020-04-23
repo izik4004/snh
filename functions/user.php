@@ -62,7 +62,9 @@ function find_user($email = ""){
 function save_user($userObject){
     file_put_contents("db/users/". $userObject['email'] . ".json", json_encode($userObject));
 }
-
+function update_user($userObject) {
+    file_put_contents("db/users/". $userObject ['email'] . ".json", json_encode($userObject));
+  }
 
 
 

@@ -22,6 +22,7 @@ $department = $_POST['department'] !="" ? $_POST['department'] : $errorCount++;
     $_SESSION['gender'] = $gender;
     $_SESSION['designation'] = $designation;
     $_SESSION['department'] = $department;
+    
 
 
 if($errorCount > 0){
@@ -42,6 +43,8 @@ if($errorCount > 0){
 
         $newUserId = $countAllUsers-1;
 
+        
+
 $userObject = [
     'id'=>$newUserId,
     'first_name'=>$first_name,
@@ -50,7 +53,8 @@ $userObject = [
     'password'=>password_hash($password, PASSWORD_DEFAULT),
     'gender'=>$gender,
     'designation'=>$designation,
-    'department'=>$department
+    'department'=>$department,
+    
 
 ];
 

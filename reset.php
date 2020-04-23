@@ -1,20 +1,22 @@
-<?php include_once('lib/header.php'); 
+<?php 
+include_once('lib/header.php'); 
     require_once('functions/alert.php');
     require_once('functions/user.php');
+    require_once('functions/redirect.php');
 
 //TODO: Fix session error message display on login page
 
 if(!is_user_loggedIn() && !is_token_set()){
     $_SESSION["error"] = "You are not authorized to view that page";
-    header("Location: login.php");
+    redirect_to("login.php");
 }
 
 ?>
    
    <h3>Reset Password</h3>
    <p>Reset Password associated with your account : [email]</p> 
-   <!-- TODO: Update email above as they enter it (JS) -->
-
+   
+   
    <form action="processreset.php" method="POST">
    <p>
         <?php  print_alert(); ?>
