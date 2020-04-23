@@ -3,14 +3,14 @@ require_once('functions/alert.php');
 
 if(isset($_SESSION['loggedIn']) && !empty($_SESSION['loggedIn'])){
 
-    header("Location: dashboard.php");
+    header("Location:super_admin.php");
 }
 
 
 ?>
 <div class="container">
     <div class="col-8">
-        <h2>Register</h2>
+        <h2>ADMIN</h2>
     </div>
     <div class="col-10">
         <p><strong>Welcome, Please Register</strong></p>
@@ -20,7 +20,7 @@ if(isset($_SESSION['loggedIn']) && !empty($_SESSION['loggedIn'])){
     </div>
     <div class="col-8">
 
-        <form method="POST" action="processregister.php" >
+        <form method="POST" action="processregister.php">
         <p>
            <?php print_alert(); ?> 
         </p>
@@ -90,52 +90,14 @@ if(isset($_SESSION['loggedIn']) && !empty($_SESSION['loggedIn'])){
                     <option value="">Select One</option>
                     <option 
                     <?php              
-                        if(isset($_SESSION['designation']) && $_SESSION['designation'] == 'Mentors (MT)'){
+                        if(isset($_SESSION['designation']) && $_SESSION['designation'] == 'Admin'){
                             echo "selected";                                                           
                         }                
                     ?>
-                    >Mentors (MT)</option>
-                    <option 
-                    <?php              
-                        if(isset($_SESSION['designation']) && $_SESSION['designation'] == 'Interns'){
-                            echo "selected";                                                           
-                        }                
-                    ?>
-                    >Interns</option>
+                    >Admin</option>
                     
                 </select>
             </p>
-            <p>
-            <label>Department</label><br />
-                <select class="form-control" name="department" >
-                    <option value="">Select One</option>
-                    <option
-                    <?php              
-                        if(isset($_SESSION['department']) && $_SESSION['department'] == 'Frontend (FE)'){
-                            echo "selected";                                                           
-                        }                
-                    ?>
-                    
-                    >Frontend(FE)</option>
-                    <option
-                    <?php              
-                        if(isset($_SESSION['department']) && $_SESSION['department'] == 'Backend (BE)'){
-                            echo "selected";                                                           
-                        }                
-                    ?>
-                               
-                    >Backend (BE)</option>
-                    <option
-                    <?php              
-                        if(isset($_SESSION['department']) && $_SESSION['department'] == 'Design (UI/UX)'){
-                            echo "selected";                                                           
-                        }                
-                    ?>
-                    
-                    
-                    >Design</option>
-                    </select>
-                </p>
                               
                 <p>
                 <button class="btn btn-sm btn-success" type="submit">Register</button>
